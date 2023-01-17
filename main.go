@@ -72,5 +72,8 @@ func main() {
 	router.POST("/names", postNames)
 	router.DELETE("/names", deleteNames)
 
-	router.Run(":9000")
+	err := router.Run(":9000")
+	if err != nil {
+		return
+	}
 }
